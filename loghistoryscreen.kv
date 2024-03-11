@@ -1,0 +1,282 @@
+<loghistoryscreen>:
+
+
+    FloatLayout:
+
+        Label:
+            id:tank
+            text: "TANK ID"
+            font_size: 35
+            size_hint: None, None
+            size: self.texture_size[0], self.texture_size[1]
+            pos_hint: {"left": 0.88, "top": 0.96}
+            color:(0,0,0,1)
+
+
+
+        Label:
+            id: timestamp_label
+            text: ""
+            font_size: 30
+            size_hint: None, None
+            size: self.texture_size[0], self.texture_size[1]
+            pos_hint: {"right": 0.88, "top": 0.95}
+            color:(0,0,0,1)
+
+        Button:
+            background_normal: 'homeimage.png'
+            background_down: 'homeimage.png'
+          
+            size_hint: None,None
+            size: dp(150), dp(150)
+            pos_hint:{"right":1.01, "top":1}
+          
+            on_press:
+                root.manager.current = "ZeroScreen"
+                root.play_button_sound()
+
+
+        Button:
+            background_normal: 'oil.png'
+          
+            size_hint: None,None
+            size: dp(165), dp(165)
+            pos_hint: {"right":1.01, "top":0.82}
+          
+            on_press:
+                root.manager.current = "FirstScreen"
+                root.play_button_sound()
+
+     
+            
+        Button:
+
+            background_normal: 'loghistory.png'
+            background_down:'loghistory.png'
+
+            size_hint: None, None
+            size: dp(145), dp(145)
+            pos_hint : {"right":1.01, "top":0.60}
+            on_press:
+                root.manager.transition.direction = "up"
+                root.manager.current = "SecondScreen"
+                root.play_button_sound()
+            
+
+
+        Button:
+
+            background_normal: 'graph.png'
+
+            size_hint: None, None
+            size: dp(150), dp(150)
+            pos_hint : {"right":1.01, "top":0.4}
+            on_press:
+           
+                root.manager.current = "ThirdScreen"
+                root.play_button_sound()
+        Button:
+
+            background_normal: 'settings.png'
+
+            size_hint: None, None
+            size:dp(150), dp(150)
+            pos_hint: {"right":1.01, "top":0.2}
+            on_press:
+               
+                root.manager.current = "FourthScreen"
+                root.play_button_sound()
+            
+        
+
+
+
+         
+        Label:
+            text: "LOG HISTORY" 
+            size_hint: None, None
+            font_size:50
+            size: self.texture_size[0], self.texture_size[1]
+            pos_hint: {"center_x":0.4,"top": 1}
+            color:(51/255,21/255,236/255,1.0)
+        
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: 0.90, 0.88
+           # size_hint: 0.50, 0.50
+            size: dp(700), dp(500)
+            pos_hint: {"x": 0, "y": 0}
+
+            canvas.before:
+                Color:
+                    rgba: 163/255, 192/255, 250/255, 1.00  # White color (R, G, B, A)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            FloatLayout:                                          
+                                 
+                    
+                TextInput:
+                    id : yyyy
+                    multiline:False
+                    font_size : 20
+                    hint_text :'yyyy'
+                    size_hint: None, None
+                    size: dp(60), dp(40)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.50, "top": 0.98}
+                    color:(0,0,0,1)
+                    
+                       
+                TextInput:
+                    id : mm
+                    multiline:False
+                    font_size : 20
+                    hint_text :'mm'
+                    size_hint: None, None
+                    size: dp(50), dp(40)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.55, "top": 0.98}
+                    color:(0,0,0,1)
+                    
+                TextInput:
+                    id : dd
+                    multiline:False
+                    font_size : 20
+                    hint_text :'dd'
+                    size_hint: None, None
+                    size: dp(50), dp(40)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.60, "top": 0.98}
+                    color:(0,0,0,1)
+                    
+                      
+                TextInput:
+                    id : hr
+                    multiline:False
+                    font_size : 20
+                    hint_text :'hour'
+                    size_hint: None, None
+                    size: dp(50), dp(40)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.65, "top": 0.98}
+                    color:(0,0,0,1)
+                    
+                       
+                TextInput:
+                    id : mn
+                    multiline:False
+                    font_size : 20
+                    hint_text :'min'
+                    size_hint: None, None
+                    size: dp(50), dp(40)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.70, "top": 0.98}
+                    color:(0,0,0,1)
+                    
+                TextInput:
+                    id : sc
+                    multiline:False
+                    font_size : 20
+                    hint_text :'sec'
+                    size_hint: None, None
+                    size: dp(50), dp(40)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.75, "top": 0.98}
+                    color:(0,0,0,1)
+                    
+                    
+                RoundedButton:
+                    text: "Set RTC time"
+                    font_size: 25
+                    color:0,0,0,1
+                    size_hint: None, None
+                    size: 200, 50
+                    pos_hint: {'center_x': 0.9, 'center_y': 0.95}
+                     
+ 
+                    on_press:
+                        root.set_rtc()
+                     
+                     
+                    
+                    
+                 
+ 
+                        
+                        
+                                
+
+                RoundedButton:
+                    text: "View"
+                    font_size: 35
+                    color:0,0,0,1
+                    size_hint: None, None
+                    size: 200, 80
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.50}
+                     
+                    #to make the button disappear after pressing on it
+
+                   # on_press: self.opacity = 0 
+                    on_press:
+                        root.view_history()
+                        root.play_button_sound()
+
+                    
+                RoundedButton:
+                    text: "Clear Log"
+                    font_size:35
+                    color:0,0,0,1
+                    size_hint:None,None
+                    size: 200, 80
+                    pos_hint:{'center_x':0.5, 'center_y': 0.30}
+
+                    on_press:
+                        root.clear_log()
+                        root.play_button_sound()
+
+
+   
+
+              
+               
+
+
+               
+        
+
+<RoundedButton@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    canvas.before:
+        Color:
+            rgba: 217/255, 217/255, 217/255, 217/255  # Set to gray color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [12]  # Adjust the radius as needed for rounded corners
+
+
+
+        
+
+
+
+                
+            
+
+
+        
+
+         
+            
+
+        
+
+            
+        
+            
+
+    

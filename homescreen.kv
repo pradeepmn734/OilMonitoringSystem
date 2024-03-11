@@ -1,0 +1,133 @@
+<HomeScreen>:
+
+    FloatLayout:
+          
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: 1 , 1
+            
+            size: dp(700), dp(500)
+            pos_hint: {"x": 0, "y": 0}
+
+            canvas.before:
+                Color:
+                    rgba: 1,1,1,1.00  # White color (R, G, B, A)
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+            
+            FloatLayout:
+
+                Image:
+                    source: 'icon.png'  # Path to the local image file
+                    size_hint: None, None  # Disable size_hint to use absolute size
+                    size: 200, 100  # Set the width and height of the image
+                    pos_hint: {'x': 0, 'top': 1}
+
+               
+
+            
+                Label:
+                    text : "Enter Tank ID"
+                    font_size :40
+
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.57, "top": 0.81}
+                    color:(0,0,0,1)
+
+                TextInput:
+                    id : tank
+                    multiline:False
+                    font_size : 35
+                    # hint_text :'00'
+                    size_hint: None, None
+                    size: dp(148), dp(50)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.54, "top": 0.69}
+                    color:(0,0,0,1)
+
+                
+                Button:
+
+                    background_normal: 'Image_button.png'
+
+                    size_hint: None, None
+                    size: dp(129), dp(129)
+                    pos_hint: {"right": 0.53, "top": 0.51}
+                    #on_press:
+                        
+                       # root.play_button_sound()
+                       # root.manager.current = "FirstScreen"
+                      #  root.on_start()
+                    disabled: not root.input_valid  # Disable button if input is not valid
+                    on_press: root.next_screen()
+                       
+                                         
+                Button:
+
+                    background_normal: 'MOTOR_ON.png'
+                    background_down: 'MOTOR_ON.png'
+
+                    size_hint: None, None
+                    size: dp(130), dp(130)
+                    pos_hint: {"right": 0.49, "top": 0.27}
+                    on_press:
+                        
+                        root.play_button_sound()
+                        root.motor_on()
+    
+                     
+                            
+                Button:
+
+                    background_normal: 'MOTOR_OFF.png'
+                    background_down: 'MOTOR_OFF.png'
+
+                    size_hint: None, None
+                    size: dp(130), dp(130)
+                    pos_hint: {"right": 0.58, "top": 0.27}
+                    on_press:
+
+                        root.play_button_sound()
+                        root.motor_off()
+
+                
+
+                Label:
+                    id:on
+                    font_size :30
+
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.54, "top": 0.1}
+                    color:(0,1,0,1)
+
+                Label:
+                    id:off
+                    font_size : 30
+
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.55, "top": 0.1}
+                    color:(1,0,0,1)
+
+
+
+                
+                        
+                      
+                            
+                    
+             
+
+
+
+
+        
+    
+           
+
+
+
+

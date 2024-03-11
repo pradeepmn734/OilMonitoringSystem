@@ -1,0 +1,319 @@
+<SensorDataScreen>:
+
+
+    FloatLayout:
+
+        Label:
+            id:tank
+            text: "Tank ID"
+            font_size: 35
+            size_hint: None, None
+            size: self.texture_size[0], self.texture_size[1]
+            pos_hint: {"left": 0.88, "top": 0.96}
+            color:(0,0,0,1)
+
+
+
+        Label:
+            id: timestamp_label
+            text: ""
+            font_size: 30
+            size_hint: None, None
+            size: self.texture_size[0], self.texture_size[1]
+            pos_hint: {"right": 0.88, "top": 0.95}
+            color:(0,0,0,1)
+
+        Button:
+            background_normal: 'homeimage.png'
+            background_down: 'homeimage.png'
+          
+            size_hint: None,None
+            size: dp(150), dp(150)
+            pos_hint: {"right": 1.01, "top": 1}
+          
+            on_press:
+                root.manager.current = "ZeroScreen"
+                root.play_button_sound()
+
+
+        Button:
+            background_normal: 'oil.png'
+            background_down:'newOil.png'
+          
+            size_hint: None,None
+            size: dp(165), dp(165)
+            pos_hint: {"right": 1.01, "top": 0.82} 
+          
+            on_press:
+                root.manager.current = "FirstScreen"
+                root.play_button_sound()
+                
+
+     
+            
+        Button:
+
+            background_normal: 'loghistory.png'
+
+            size_hint: None, None
+            size: dp(145), dp(145)
+            pos_hint: {"right": 1.01, "top": 0.60}
+            on_press:
+              
+                root.manager.current = "SecondScreen"
+                root.play_button_sound()
+            
+
+
+        Button:
+
+            background_normal: 'graph.png'
+
+            size_hint: None, None
+            size: dp(150), dp(150)
+            pos_hint: {"right": 1.01, "top": 0.4}
+            on_press:
+           
+                root.manager.current = "ThirdScreen"
+        Button:
+
+            background_normal: 'settings.png'
+
+            size_hint: None, None
+            size: dp(150), dp(150)
+            pos_hint: {"right": 1.01, "top": 0.2}
+            on_press:
+               
+                root.manager.current = "FourthScreen"
+                root.play_button_sound()
+          
+        
+    
+
+         
+        Label:
+            text: "OIL MONITORING SYSTEM"
+            size_hint: None, None
+            font_size:50
+            size: self.texture_size[0], self.texture_size[1]
+            pos_hint: {"center_x":0.4,"top": 1}
+            color:(51/255,21/255,236/255,1.0)
+        
+
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: 0.90, 0.88
+           # size_hint: 0.50, 0.50
+            size: dp(700), dp(500)
+            pos_hint: {"x": 0, "y": 0}
+
+            canvas.before:
+                Color:
+                    rgba: 163/255, 192/255, 250/255, 1.00  
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            FloatLayout:
+
+                Label:
+                    text : " Hrs "
+                    font_size:25
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.47, "top": 0.98}
+                    color:(0,0,0,1)
+
+                TextInput:
+
+                    id: time_1
+                    hint_text:'00'
+                    multiline:False
+                    font_size :25
+
+                    size_hint: None, None
+                    size: dp(40), dp(40)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.47, "top": 0.92}
+                    color:(0,0,0,1)
+
+                Label:
+                    text : ":"
+                    font_size:25
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.48, "top": 0.92}
+                    color:(0,0,0,1)
+
+
+                Label:
+                    text : " mins "
+                    font_size:25 
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.54, "top": 0.98}
+                    color:(0,0,0,1)
+
+                TextInput:
+
+                    id: time_2
+                    hint_text:'00'
+                    multiline:False
+                    font_size :25
+
+                    size_hint: None, None
+                    size: dp(40), dp(40)
+                    #size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.52, "top": 0.92}
+                    color:(0,0,0,1)
+
+                   
+
+
+
+                Label:
+                    text : "NAS :"
+                    font_size :40
+                    
+           
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.18, "top": 0.81}
+                    color:(0,0,0,1)
+
+                
+                Label:
+
+                    text: "Oil Temp :"
+                    font_size:40
+
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.24, "top": 0.66}
+                    color:(0,0,0,1)
+
+
+                Label:
+                    text: "RH :"
+                    font_size :40
+
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.16, "top": 0.51}
+                    color:(0,0,0,1)
+
+
+
+                Label:
+                    text:"TANN :"
+                    font_size:40
+
+                    
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.20, "top": 0.36}
+                    color:(0,0,0,1)
+
+                
+                Label:
+                    id:NAS 
+                    font_size :40
+
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.88, "top": 0.81}
+                    color:(0,0,0,1)
+
+               
+
+                Label:
+                    id: relative_humidity
+                    font_size :40
+                    
+           
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.88, "top": 0.51}
+                    color:(0,0,0,1)
+
+                
+                Label:
+
+                    id: oil_temperature
+                    font_size:40
+
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.88, "top": 0.66}
+                    color:(0,0,0,1)
+
+
+            
+                Label:
+                    id: TANN
+                    font_size:40
+
+                    
+                    size_hint: None, None
+                    size: self.texture_size[0], self.texture_size[1]
+                    pos_hint: {"right": 0.84, "top": 0.36}
+                    color:(0,0,0,1)
+
+
+                RoundedButton:
+                    text: "AUTOMATIC"
+                    font_size: 20
+                    color:0,0,0,1
+                    size_hint: None, None
+                    size: 200, 50
+                    pos_hint: {'center_x': 0.4, 'center_y': 0.15}
+
+
+                    on_press:
+                        root.automatic_log()
+                        root.play_button_sound()
+              
+                
+
+                RoundedButton:
+                    text: "MANUAL"
+                    font_size: 20
+                    color:0,0,0,1
+                    size_hint: None, None
+                    size: 200, 50
+                    pos_hint: {'center_x': 0.6, 'center_y': 0.15}
+
+
+                    on_press:
+                        root.log_data()
+                        root.play_button_sound()
+                   
+                 
+                   
+
+
+<RoundedButton@Button>
+    background_color:(0,0,0,0)
+    background_normal:''
+    canvas.before:
+        Color:
+            rgba: 217/255, 217/255, 217/255  # Set to gray color
+        RoundedRectangle:
+            pos: self.pos
+            size: self.size
+            radius: [12]  # Adjust the radius as needed for rounded corners
+
+
+
+        
+
+         
+            
+
+        
+
+            
+        
+            
+
+    
