@@ -1,10 +1,7 @@
 """
 
 project:Oil Monitoring System
-start_date:December 11, 2023
-last_modified:January 25,2024
-version: 1.0
-Author:Nimesh Oli
+
 
 """
 
